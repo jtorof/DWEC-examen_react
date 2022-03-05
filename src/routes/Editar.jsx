@@ -20,9 +20,7 @@ const Editar = () => {
     } catch (error) {
       console.log(error);
     }
-  };
-
-  
+  };  
 
   const updateAtApi = async (url, objectToEdit) => {
     try {
@@ -35,6 +33,7 @@ const Editar = () => {
       });
       const data = await response.json();
       console.log(data);
+      navigate(-1);
     } catch (error) {
       console.log(error);
     }
@@ -53,7 +52,7 @@ const Editar = () => {
   }
 
   const handleSubmit = (e) => {
-    //e.preventDefault();
+    e.preventDefault();
     const productObject = {
       title: productName,
       price: parseFloat(productPrice),
@@ -74,10 +73,10 @@ const Editar = () => {
     getData(productURL);
   }, []);
 
-  useEffect(() => {
+  useEffect(() => {    
     setProductName(productData.title);
     setProductPrice(productData.price);
-    //setProductRate(productData.rating.rate);
+    setProductRate(productData.rating?.rate);
   }, [productData]);
   
 

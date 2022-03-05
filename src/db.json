@@ -231,7 +231,7 @@
       "title": "test",
       "price": 10,
       "rating": {
-        "rate": 1
+        "rate": 5
       },
       "id": 21
     }
