@@ -226,6 +226,14 @@
         "rate": 3.6,
         "count": 145
       }
+    },
+    {
+      "title": "test",
+      "price": 10,
+      "rating": {
+        "rate": 1
+      },
+      "id": 21
     }
   ],
   "users": [

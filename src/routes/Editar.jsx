@@ -77,7 +77,7 @@ const Editar = () => {
   useEffect(() => {
     setProductName(productData.title);
     setProductPrice(productData.price);
-    setProductRate(productData.rating["rate"]);
+    //setProductRate(productData.rating.rate);
   }, [productData]);
   
 
