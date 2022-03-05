@@ -60,14 +60,12 @@ const Editar = () => {
         rate: parseFloat(productRate)
       }
     }
-    updateAtApi(productURL, productObject)
-
+    updateAtApi(productURL, productObject);
   }
-
+  
   function handleBack() {
     navigate(-1);
   }
-
 
   useEffect(() => {
     getData(productURL);

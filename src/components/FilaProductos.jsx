@@ -23,7 +23,7 @@ const FilaProductos = ({ data, setProductsData }) => {
         method: "DELETE",
       });
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
       getData(productsURL);
     } catch (error) {
       console.log(error);
@@ -34,8 +34,8 @@ const FilaProductos = ({ data, setProductsData }) => {
     <>
       <td>{data.id}</td>
       <td>{data.title}</td>
-      <td>{parseFloat(data.price).toFixed(2)} €</td>
-      <td>{parseFloat(data.rating.rate).toFixed(2)}</td>
+      <td>{parseFloat(data.price).toFixed(2)}€</td>
+      <td>{parseFloat(data.rating.rate).toFixed(1)}</td>
       <td>
         <Link to={`/editar/${data?.id}`}>
           <button>Editar</button>

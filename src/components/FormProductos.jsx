@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import getFromAPI from '../helpers/getFromAPI'
 
 const productsURL = `http://localhost:5000/products`;
 
 const FormProductos = ({ productsData, setProductsData }) => {
-  //const [productsData, setProductsData] = useState([]);
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [productRate, setProductRate] = useState("");
@@ -20,10 +19,14 @@ const FormProductos = ({ productsData, setProductsData }) => {
     }
   };
 
+  const resetForm = () => {
+    setProductName("");
+    setProductPrice("");
+    setProductRate("");
+  }
+
   const insertIntoApi = async (url, objectToUpload) => {
-    //console.log(productsData);
     for (const product of productsData) {
-      //console.log(product.title);
       if (product.title === objectToUpload.title) {
         console.log(product.title);
         alert("el producto ya existe");
@@ -32,7 +35,6 @@ const FormProductos = ({ productsData, setProductsData }) => {
         return;
       }
     }
-
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -67,12 +69,6 @@ const FormProductos = ({ productsData, setProductsData }) => {
     insertIntoApi(productsURL, productObject);
   }
 
-  const resetForm = (e) => {
-    setProductName("");
-    setProductPrice("");
-    setProductRate("");
-  }
-
   const handleChange = (e) => {
     if (e.target.name === "title") {
       setProductName(e.target.value);
@@ -84,10 +80,6 @@ const FormProductos = ({ productsData, setProductsData }) => {
       setProductRate(e.target.value);
     }
   }
-
-  /* useEffect(() => {
-    getData(productsURL);
-  }, []); */
 
   return (
     <>

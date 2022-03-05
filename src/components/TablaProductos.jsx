@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react';
 
-import getFromAPI from '../helpers/getFromAPI'
 import FilaProductos from './FilaProductos';
 
 const TablaProductos = ({ productsData, setProductsData }) => {
