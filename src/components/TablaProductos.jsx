@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import getFromAPI from '../helpers/getFromAPI'
 import FilaProductos from './FilaProductos';
 
-const productsURL = `http://localhost:5000/products`;
+//const productsURL = `http://localhost:5000/products`;
 
-const TablaProductos = () => {
-  const [productsData, setProductsData] = useState([]);
+const TablaProductos = ({ productsData, setProductsData }) => {
+  /* const [productsData, setProductsData] = useState([]);
 
   const getData = async (url) => {
     try {
@@ -21,7 +21,7 @@ const TablaProductos = () => {
 
   useEffect(() => {
     getData(productsURL);
-  }, []);
+  }, []); */
 
   return (
     <>
@@ -34,7 +34,7 @@ const TablaProductos = () => {
         <tbody>
           {productsData.map((producto, index) => (
             <tr key={index} >
-              <FilaProductos data={producto} />
+              <FilaProductos data={producto} setProductsData={setProductsData} />
             </tr>
           ))}
         </tbody>
